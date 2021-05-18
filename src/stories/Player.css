@@ -1,0 +1,20 @@
+.Player {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  font-family: sans-serif;
+}
+
+.Player__Score {
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: slategray;
+}
+
+.Player__Name {
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: slategray;
+}

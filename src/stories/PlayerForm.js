@@ -1,5 +1,9 @@
-import React from 'react'
 import './PlayerForm.css'
+import PropTypes from 'prop-types'
+
+PlayerForm.propTypes = {
+  onSubmit: PropTypes.func,
+}
 
 export default function PlayerForm({ onSubmit }) {
   return (
@@ -15,5 +19,7 @@ export default function PlayerForm({ onSubmit }) {
     const form = event.target
     const input = form.elements.name
     onSubmit(input.value)
+    form.reset()
+    input.focus()
   }
 }
