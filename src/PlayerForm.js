@@ -8,7 +8,7 @@ PlayerForm.propTypes = {
 export default function PlayerForm({ onSubmit }) {
   return (
     <form className="PlayerForm" onSubmit={handleSubmit}>
-      <label>
+      <label className="Button__Form">
         Add player:
         <input name="name" type="text" placeholder="Player name" />
       </label>

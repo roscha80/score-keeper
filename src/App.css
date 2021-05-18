@@ -1,0 +1,11 @@
+.App {
+  background-color: thistle;
+  margin: 20px;
+  border-color: #8a768a;
+}
+
+.Section {
+  background-color: thistle;
+  margin: 20px;
+  justify-content: center;
+}
