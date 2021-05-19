@@ -2,16 +2,16 @@ import Player from './Player'
 import PlayerForm from './PlayerForm'
 import Button from './Button'
 import { useState } from 'react'
-import './App.css'
 import Header from './Header'
+import styled from 'styled-components/macro'
 
 function App() {
   const [players, setPlayers] = useState([])
 
   return (
-    <div className="App">
+    <Wrapper>
       <Header />
-      <div className="Section">
+      <section>
         <PlayerForm onSubmit={createPlayer} />
         {players.map((player, index) => (
           <Player
@@ -22,12 +22,14 @@ function App() {
             score={player.score}
           />
         ))}
-      </div>
-      <div className="Section">
-        <Button onClick={resetScores}>Reset scores</Button>
+      </section>
+      <section>
+        <Button color="white" isActive onClick={resetScores}>
+          Reset scores
+        </Button>
         <Button onClick={resetAll}>Reset all</Button>
-      </div>
-    </div>
+      </section>
+    </Wrapper>
   )
   function resetAll() {
     setPlayers([])
@@ -52,3 +54,15 @@ function App() {
 }
 
 export default App
+
+const Wrapper = styled.div`
+  background-color: thistle;
+  margin: 20px;
+  border-color: #8a768a;
+
+  section {
+    background-color: thistle;
+    margin: 20px;
+    justify-content: center;
+  }
+`

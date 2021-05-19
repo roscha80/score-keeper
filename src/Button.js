@@ -1,16 +1,19 @@
-import './Button.css'
-import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
-Button.propTypes = {
-  isActive: PropTypes.bool,
-  onClick: PropTypes.func,
-  children: PropTypes.node,
-}
+const Button = styled.button`
+  margin: 10px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 5px;
+  background: ${props => (props.isActive ? 'skyblue' : 'slategray')};
+  color: ${props => props.color};
 
-export default function Button({ children, isActive, onClick }) {
-  return (
-    <button onClick={onClick} className={isActive ? 'Button active' : 'Button'}>
-      {children}
-    </button>
-  )
-}
+  &:hover {
+    background: pink;
+  }
+
+  &:isactive {
+    scale: 120%;
+  }
+`
+export default Button
