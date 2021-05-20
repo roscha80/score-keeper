@@ -9,8 +9,8 @@ function App() {
   const [players, setPlayers] = useState([])
 
   return (
-    <Wrapper>
-      <Header />
+    <AppWrapper>
+      <Header name="Score Master 3000" />
       <section>
         <PlayerForm onSubmit={createPlayer} />
         {players.map((player, index) => (
@@ -29,7 +29,7 @@ function App() {
         </Button>
         <Button onClick={resetAll}>Reset all</Button>
       </section>
-    </Wrapper>
+    </AppWrapper>
   )
   function resetAll() {
     setPlayers([])
@@ -55,7 +55,7 @@ function App() {
 
 export default App
 
-const Wrapper = styled.div`
+const AppWrapper = styled.div`
   background-color: thistle;
   margin: 20px;
   border-color: #8a768a;

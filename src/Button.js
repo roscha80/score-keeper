@@ -1,6 +1,16 @@
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
-const Button = styled.button`
+Button.propTypes = {
+  isActive: PropTypes.bool,
+  onClick: PropTypes.func.isRequired,
+  children: PropTypes.node,
+}
+export default function Button(props) {
+  return <ButtonStyled {...props} />
+}
+
+const ButtonStyled = styled.button`
   margin: 10px;
   padding: 0 12px;
   border: none;
@@ -11,9 +21,4 @@ const Button = styled.button`
   &:hover {
     background: pink;
   }
-
-  &:isactive {
-    scale: 120%;
-  }
 `
-export default Button

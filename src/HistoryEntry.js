@@ -1,26 +1,21 @@
 import PropTypes from 'prop-types'
-import Button from './Button'
 import styled from 'styled-components/macro'
 
-Player.propTypes = {
+HistoryEntry.propTypes = {
   name: PropTypes.string,
-  onMinus: PropTypes.func,
-  onPlus: PropTypes.func,
   score: PropTypes.number,
 }
 
-export default function Player({ name, onMinus, onPlus, score }) {
+export default function HistoryEntry({ name, score }) {
   return (
-    <PlayerWrapper>
+    <SingleEntry>
       <Name>{name}</Name>
-      <Button onClick={onMinus}>-</Button>
       <Score>{score}</Score>
-      <Button onClick={onPlus}>+</Button>
-    </PlayerWrapper>
+    </SingleEntry>
   )
 }
 
-const PlayerWrapper = styled.section`
+const SingleEntry = styled.section`
   display: flex;
   flex-direction: row;
   gap: 15px;

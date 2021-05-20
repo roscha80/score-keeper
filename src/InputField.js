@@ -1,18 +1,17 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
 
-PlayerForm.propTypes = {
+InputField.propTypes = {
   onSubmit: PropTypes.func,
 }
 
-export default function PlayerForm({ onSubmit }) {
+export default function InputField({ onSubmit }) {
   return (
-    <SubmitForm onSubmit={handleSubmit}>
-      <Label>
-        Add player:
-        <input name="name" type="text" placeholder="Player name" />
-      </Label>
-    </SubmitForm>
+    <InputFieldWrapper onSubmit={handleSubmit}>
+      <label>
+        <input name="name" type="text" />
+      </label>
+    </InputFieldWrapper>
   )
   function handleSubmit(event) {
     event.preventDefault()
@@ -24,11 +23,7 @@ export default function PlayerForm({ onSubmit }) {
   }
 }
 
-const SubmitForm = styled.form`
-  display: grid;
-  margin: 20px 0;
-`
-const Label = styled.label`
+const InputFieldWrapper = styled.form`
   display: grid;
   margin: 20px 0;
 `

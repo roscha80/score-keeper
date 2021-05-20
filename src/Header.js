@@ -1,16 +1,18 @@
 import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
 
-export default function Header() {
-  return (
-    <Wrapper>
-      <h1>ScoreMaster 3000</h1>
-    </Wrapper>
-  )
+Header.propTypes = {
+  name: PropTypes.string,
 }
 
-const Wrapper = styled.header`
+export default function Header({ name }) {
+  return <HeaderWrapper>{name}</HeaderWrapper>
+}
+
+const HeaderWrapper = styled.h1`
   box-sizing: border-box;
   font-size: 80%;
   text-align: center;
   padding: 0 0 0 10px;
+  font-family: sans-serif;
 `
