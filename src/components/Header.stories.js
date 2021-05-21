@@ -9,5 +9,5 @@ const Template = args => <Header {...args} />
 
 export const DefaultHeader = Template.bind({})
 DefaultHeader.args = {
-  name: 'Score Master 3000',
+  children: 'Score Master 3000',
 }

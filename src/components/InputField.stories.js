@@ -6,5 +6,5 @@ export default {
 }
 
 const Template = args => <InputField {...args} />
-export const DefaultInputField = Template.bind({})
-DefaultInputField.args = {}
+export const Default = Template.bind({})
+Default.args = {}

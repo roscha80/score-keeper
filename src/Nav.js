@@ -1,31 +1,35 @@
-import PropTypes from 'prop-types'
-import Button from './Button'
 import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
+import Button from './components/Button'
 
-Nav.propTypes = {
-  goToHistory: PropTypes.func,
-  goToPlay: PropTypes.func,
-  isActiveLeft: PropTypes.func,
-  isActiveRight: PropTypes.func,
+Navigation.propTypes = {
+  onNavigate: PropTypes.func,
+  pages: PropTypes.arrayOf(
+    PropTypes.shape({ title: PropTypes.string, id: PropTypes.string })
+  ),
+  currentPageId: PropTypes.string,
 }
-
-export default function Nav({ goToPlay, goToHistory }) {
+export default function Navigation({ onNavigate, pages, currentPageId }) {
   return (
-    <NavBar>
-      <Button isActiveLeft onClick={goToPlay}>
-        PLAY
-      </Button>
-      <Button isActiveRight onClick={goToHistory}>
-        HISTORY
-      </Button>
-    </NavBar>
+    <Nav>
+      {pages.map(({ title, id }) => (
+        <NavButton
+          key={id}
+          isActive={currentPageId === id}
+          onClick={() => onNavigate(id)}
+        >
+          {title}
+        </NavButton>
+      ))}
+    </Nav>
   )
 }
 
-const NavBar = styled.section`
+const Nav = styled.nav`
   display: flex;
-  flex-direction: row;
-  gap: 15px;
-  justify-content: center;
-  background-color: thistle;
+`
+
+const NavButton = styled(Button)`
+  border-radius: 0;
+  width: 100%;
 `

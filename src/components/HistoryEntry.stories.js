@@ -9,6 +9,9 @@ const Template = args => <HistoryEntry {...args} />
 
 export const DefaultHistoryEntry = Template.bind({})
 DefaultHistoryEntry.args = {
-  name: 'John Doe',
-  score: 1250,
+  gameName: 'Tetris',
+  players: [
+    { name: 'Peter Parker', score: 240 },
+    { name: 'Paula Parker', score: 500 },
+  ],
 }

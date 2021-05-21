@@ -1,23 +1,18 @@
+import React from 'react'
 import Nav from './Nav'
 
 export default {
-  title: 'Nav',
+  title: 'Navigation',
   component: Nav,
 }
 
 const Template = args => <Nav {...args} />
 
-export const DefaultNav = Template.bind({})
-DefaultNav.args = {}
-
-export const ActiveLeftNav = Template.bind({})
-DefaultNav.args = {
-  isActiveLeft: true,
-  isActiveRight: false,
-}
-
-export const ActiveRightNav = Template.bind({})
-DefaultNav.args = {
-  isActiveLeft: false,
-  isActiveRight: true,
+export const Default = Template.bind({})
+Default.args = {
+  currentPageId: 'play',
+  pages: [
+    { title: 'Play', id: 'play' },
+    { title: 'History', id: 'history' },
+  ],
 }
