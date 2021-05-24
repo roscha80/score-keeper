@@ -1,10 +1,9 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import CreatePage from './pages/CreatePage'
 import GamePage from './pages/GamePage'
 import styled from 'styled-components/macro'
 import Nav from './components/Nav'
 import HistoryPage from './pages/HistoryPage'
-import { useEffect } from 'react'
 import Header from './components/Header'
 
 export default function App() {
