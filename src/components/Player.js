@@ -27,6 +27,8 @@ const PlayerWrapper = styled.section`
   font-family: sans-serif;
   margin: 20px 0;
   justify-content: center;
+  border-radius: 5px;
+  background: PapayaWhip !important;
 `
 const Name = styled.h2`
   padding: 12px;

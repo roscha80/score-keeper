@@ -30,6 +30,5 @@ const Nav = styled.nav`
 `
 
 const NavButton = styled(Button)`
-  border-radius: 0;
   width: 100%;
 `

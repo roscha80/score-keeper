@@ -10,9 +10,7 @@ export default function Header({ children }) {
 }
 
 const HeaderStyled = styled.h3`
-  box-sizing: border-box;
   text-align: center;
-  padding: 0 0 0 10px;
   font-family: sans-serif;
-  font-weight: 700;
+  scale: 70%;
 `

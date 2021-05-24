@@ -15,7 +15,7 @@ const ButtonStyled = styled.button`
   padding: 0 12px;
   border: none;
   border-radius: 5px;
-  background: ${props => (props.isActive ? 'skyblue' : 'slategray')};
+  background: ${props => (props.isActive ? 'IndianRed' : 'LightCoral')};
   color: ${props => props.color};
 
   &:hover {

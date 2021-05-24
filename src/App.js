@@ -85,9 +85,8 @@ export default function App() {
 }
 
 const AppWrapper = styled.div`
-  background-color: thistle;
+  background-color: BlanchedAlmond;
   margin: 20px;
-  border-color: #8a768a;
 
   section {
     background-color: thistle;
@@ -97,7 +96,9 @@ const AppWrapper = styled.div`
 `
 const PageHeader = styled.h1`
   font-weight: 900;
-  box-sizing: border-box;
   text-align: center;
   text-decoration: underline;
+  background-color: Wheat;
+  border-radius: 5px;
+  padding: 15px;
 `

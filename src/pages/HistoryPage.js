@@ -21,4 +21,6 @@ const Grid = styled.section`
   flex-direction: column;
   justify-content: space-between;
   gap: 20px;
+  background: Wheat !important;
+  border-radius: 15px;
 `

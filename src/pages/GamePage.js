@@ -23,7 +23,7 @@ export default function GamePage({
 }) {
   return (
     <Grid>
-      <Header>{gameName}</Header>
+      <GameHeader>{gameName}</GameHeader>
       {players.map(({ name, score }, index) => (
         <Player
           onMinus={() => onPlayerUpdate(index, -10)}
@@ -42,4 +42,16 @@ export default function GamePage({
 const Grid = styled.section`
   display: grid;
   gap: 20px;
+  background: Wheat !important;
+  border-radius: 15px;
+`
+
+const GameHeader = styled.h2`
+  background: RosyBrown;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px 12px;
+  border: none;
+  text-align: center;
+  color: white;
 `

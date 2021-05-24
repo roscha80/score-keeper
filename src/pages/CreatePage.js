@@ -49,12 +49,14 @@ const Grid = styled.section`
   justify-content: space-between;
   gap: 20px;
   height: 100vh;
+  background: wheat !important;
+  border-radius: 10px;
 `
 
 const Form = styled.form`
   display: grid;
   gap: 10px;
-
+  background: wheat !important;
   label {
     display: grid;
     gap: 5px;

@@ -32,25 +32,29 @@ const SingleEntry = styled.section`
   gap: 15px;
   font-family: sans-serif;
   justify-content: center;
+  background: Wheat !important;
+  margin: 0;
+  border-radius: 5px;
 `
 const Name = styled.h2`
   padding: 12px;
-  justify-content: center;
-  background: PaleVioletRed;
+  text-align: center;
+  background: RosyBrown;
   border-radius: 5px;
   color: white;
 `
 const Player = styled.li`
   display: flex;
-  justify-content: space-between;
   span {
-    background: LightPink;
-    padding: 5px;
-    border-radius: 5px;
+    text-align: center;
+    padding: 15px;
+    margin: 0;
   }
 `
 const Date = styled.small`
   text-align: center;
   font-weight: 700;
   font-size: 80%;
+  padding: 5px;
+  border-radius: 5px;
 `

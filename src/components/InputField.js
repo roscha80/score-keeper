@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
 InputField.propTypes = {
   onSubmit: PropTypes.func,
@@ -6,9 +7,14 @@ InputField.propTypes = {
 
 export default function InputField({ label, ...inputProps }) {
   return (
-    <label>
+    <Label>
       {label}
       <input {...inputProps} />
-    </label>
+    </Label>
   )
 }
+
+const Label = styled.label`
+  background: wheat !important;
+  padding: 15px;
+`
