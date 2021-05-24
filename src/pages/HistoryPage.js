@@ -1,11 +1,16 @@
 import styled from 'styled-components'
 import HistoryEntry from '../components/HistoryEntry'
 
-export default function HistoryPage({ games, onNavigate }) {
+export default function HistoryPage({ games }) {
   return (
     <Grid>
-      {games.map(({ gameName, players, date }) => (
-        <HistoryEntry gameName={gameName} players={players} date={date} />
+      {games.map(({ id, gameName, players, date }) => (
+        <HistoryEntry
+          key={id}
+          gameName={gameName}
+          players={players}
+          date={date}
+        />
       ))}
     </Grid>
   )

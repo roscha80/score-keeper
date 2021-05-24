@@ -1,9 +1,9 @@
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
-import Button from './components/Button'
+import Button from './Button'
 
 Navigation.propTypes = {
-  onNavigate: PropTypes.func,
+  onNavigate: PropTypes.func.isRequired,
   pages: PropTypes.arrayOf(
     PropTypes.shape({ title: PropTypes.string, id: PropTypes.string })
   ),

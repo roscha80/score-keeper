@@ -2,14 +2,18 @@ import { useState } from 'react'
 import CreatePage from './pages/CreatePage'
 import GamePage from './pages/GamePage'
 import styled from 'styled-components/macro'
-import Nav from './Nav'
+import Nav from './components/Nav'
 import HistoryPage from './pages/HistoryPage'
+import { useEffect } from 'react'
 
 export default function App() {
   const [currentPageId, setCurrentPageId] = useState('create')
-  const [history, setHistory] = useState([])
   const [players, setPlayers] = useState([])
   const [gameName, setGameName] = useState('')
+  const [history, setHistory] = useState(loadFromLocal('games') ?? [])
+  useEffect(() => {
+    saveToLocal('games', history)
+  }, [history])
 
   return (
     <AppWrapper>
@@ -46,6 +50,8 @@ export default function App() {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
     })
     setHistory([{ players, gameName, date }, ...history])
   }
@@ -65,6 +71,13 @@ export default function App() {
       { ...playerToUpdate, score: playerToUpdate.score + value },
       ...players.slice(index + 1),
     ])
+  }
+  function loadFromLocal(key) {
+    const jsonString = localStorage.getItem(key)
+    return JSON.parse(jsonString)
+  }
+  function saveToLocal(key, data) {
+    localStorage.setItem(key, JSON.stringify(data))
   }
 }
 

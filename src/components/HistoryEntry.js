@@ -14,10 +14,12 @@ export default function HistoryEntry({ gameName, players, date }) {
       <Name>{gameName}</Name>
       <Date>{date}</Date>
       <ul>
-        {players.map(({ player, score }) => (
-          <Player key={player}>
-            <span>{player}</span>
-            <span>{score}</span>
+        {players.map(player => (
+          <Player key={player.name}>
+            <span>
+              {player.name + ': '}
+              {player.score}
+            </span>
           </Player>
         ))}
       </ul>
@@ -29,18 +31,26 @@ const SingleEntry = styled.section`
   display: grid;
   gap: 15px;
   font-family: sans-serif;
-  margin: 20px 0;
   justify-content: center;
 `
 const Name = styled.h2`
   padding: 12px;
   justify-content: center;
+  background: PaleVioletRed;
+  border-radius: 5px;
+  color: white;
 `
 const Player = styled.li`
   display: flex;
   justify-content: space-between;
+  span {
+    background: LightPink;
+    padding: 5px;
+    border-radius: 5px;
+  }
 `
 const Date = styled.small`
   text-align: center;
-  font-size: 50%;
+  font-weight: 700;
+  font-size: 80%;
 `
