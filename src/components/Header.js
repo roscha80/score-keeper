@@ -9,7 +9,7 @@ export default function Header({ children }) {
   return <HeaderStyled>{children}</HeaderStyled>
 }
 
-const HeaderStyled = styled.h2`
+const HeaderStyled = styled.h3`
   box-sizing: border-box;
   text-align: center;
   padding: 0 0 0 10px;

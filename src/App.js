@@ -5,6 +5,7 @@ import styled from 'styled-components/macro'
 import Nav from './components/Nav'
 import HistoryPage from './pages/HistoryPage'
 import { useEffect } from 'react'
+import Header from './components/Header'
 
 export default function App() {
   const [currentPageId, setCurrentPageId] = useState('create')
@@ -17,6 +18,8 @@ export default function App() {
 
   return (
     <AppWrapper>
+      <PageHeader>Score Keeper 3000</PageHeader>
+      <Header>you are on the {currentPageId} page</Header>
       {currentPageId === 'create' && (
         <CreatePage onNavigate={setCurrentPageId} onSubmit={handleSubmit} />
       )}
@@ -91,4 +94,10 @@ const AppWrapper = styled.div`
     margin: 20px;
     justify-content: center;
   }
+`
+const PageHeader = styled.h1`
+  font-weight: 900;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: underline;
 `
