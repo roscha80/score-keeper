@@ -13,16 +13,16 @@ export default function HistoryEntry({ gameName, players, date }) {
     <SingleEntry>
       <Name>{gameName}</Name>
       <Date>{date}</Date>
-      <ul>
+      <StyledUl>
         {players.map(player => (
           <Player key={player.name}>
-            <span>
+            <span key={player.name}>
               {player.name + ': '}
               {player.score}
             </span>
           </Player>
         ))}
-      </ul>
+      </StyledUl>
     </SingleEntry>
   )
 }
@@ -43,12 +43,18 @@ const Name = styled.h2`
   border-radius: 5px;
   color: white;
 `
+const StyledUl = styled.ul`
+  background: Wheat !important;
+`
+
 const Player = styled.li`
   display: flex;
+  background: Wheat !important;
   span {
     text-align: center;
     padding: 15px;
     margin: 0;
+    background: Wheat !important;
   }
 `
 const Date = styled.small`

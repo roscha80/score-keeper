@@ -1,23 +1,18 @@
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 import Button from './Button'
+import { NavLink } from 'react-router-dom'
 
 Navigation.propTypes = {
-  onNavigate: PropTypes.func.isRequired,
   pages: PropTypes.arrayOf(
     PropTypes.shape({ title: PropTypes.string, id: PropTypes.string })
   ),
-  currentPageId: PropTypes.string,
 }
-export default function Navigation({ onNavigate, pages, currentPageId }) {
+export default function Navigation({ pages }) {
   return (
     <Nav>
-      {pages.map(({ title, id }) => (
-        <NavButton
-          key={id}
-          isActive={currentPageId === id}
-          onClick={() => onNavigate(id)}
-        >
+      {pages.map(({ title, id, disabled }) => (
+        <NavButton exact component={NavLink} to={id} key={id}>
           {title}
         </NavButton>
       ))}
