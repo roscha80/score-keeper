@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom'
 import GlobalStyles from './GlobalStyles'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 ReactDOM.render(
   <React.StrictMode>
-    <GlobalStyles />
-    <App />
+    <Router>
+      <GlobalStyles />
+      <App />
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 )
